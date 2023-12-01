@@ -1,0 +1,13 @@
+<?php
+
+declare(strict_types=1);
+
+namespace %NAMESPACE%;
+
+use Guandeng\Elasticsearch\Index\AbstractIndex;
+
+class %CLASS% extends AbstractIndex
+{
+    protected $pool = '%POOL%';
+    protected $index = '%INDEX%';
+}
