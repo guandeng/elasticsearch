@@ -13,6 +13,8 @@ namespace Guandeng\Elasticsearch;
 use Guandeng\Elasticsearch\Exception\InvalidClientProxyException;
 use Hyperf\Contract\ConfigInterface;
 
+use function Hyperf\Support\make;
+
 class ClientFactory
 {
     /**

@@ -15,9 +15,12 @@ use Elasticsearch\ClientBuilder;
 use Guandeng\Elasticsearch\Exception\MissingConfigException;
 use Guandeng\Elasticsearch\Query\Builder;
 use Hyperf\Contract\ConfigInterface;
+use Hyperf\Coroutine\Coroutine;
 use Hyperf\Guzzle\RingPHP\CoroutineHandler;
 use Hyperf\Guzzle\RingPHP\PoolHandler;
-use Hyperf\Utils\Coroutine;
+
+use function Hyperf\Support\make;
+use function Hyperf\Collection\data_get;
 
 /**
  * @mixin \Elasticsearch\Client

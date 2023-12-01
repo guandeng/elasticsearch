@@ -14,8 +14,8 @@ use Guandeng\Elasticsearch\ClientFactory;
 use Guandeng\Elasticsearch\ClientProxy;
 use Guandeng\Elasticsearch\Index\Traits\Migrateable;
 use Guandeng\Elasticsearch\Query\Builder;
-use Hyperf\Utils\ApplicationContext;
 use Psr\Container\ContainerInterface;
+use Hyperf\Context\ApplicationContext;
 
 /**
  * @mixin \Elasticsearch\Client

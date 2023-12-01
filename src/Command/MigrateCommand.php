@@ -21,6 +21,8 @@ use Hyperf\Command\Command as HyperfCommand;
 use Psr\Container\ContainerInterface;
 use Throwable;
 
+use function Hyperf\Support\make;
+
 /**
  * @Command
  */
