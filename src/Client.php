@@ -21,6 +21,7 @@ use Hyperf\Guzzle\RingPHP\PoolHandler;
 
 use function Hyperf\Support\make;
 use function Hyperf\Collection\data_get;
+use function Hyperf\Tappable\tap;
 
 /**
  * @mixin \Elasticsearch\Client

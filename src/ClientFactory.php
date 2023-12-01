@@ -14,6 +14,7 @@ use Guandeng\Elasticsearch\Exception\InvalidClientProxyException;
 use Hyperf\Contract\ConfigInterface;
 
 use function Hyperf\Support\make;
+use function Hyperf\Tappable\tap;
 
 class ClientFactory
 {
