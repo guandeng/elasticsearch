@@ -26,7 +26,7 @@ class ClientFactory
     public function __construct(ConfigInterface $config)
     {
         foreach ($config->get('elasticsearch') as $poolName => $configure) {
-            $this->proxies[$poolName] = make(ClientProxy::class, ['pool' => $poolName]);
+            $this->proxies[$poolName] = make(ClientProxy::class, ['poolName' => $poolName]);
         }
     }
 
