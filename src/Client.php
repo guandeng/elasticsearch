@@ -60,7 +60,7 @@ class Client
             $hosts = (array) data_get($poolConfig, 'hosts', []);
 
             if (($retries = data_get($poolConfig, 'retries')) > 0) {
-                $builder->setRetries($retries);
+                $builder->setRetries((int) $retries);
             }
             $builder->setHosts($hosts);
         });
