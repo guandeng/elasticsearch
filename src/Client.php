@@ -8,9 +8,9 @@ declare(strict_types=1);
  * @document https://github.com/guandeng/elasticsearch/blob/main/README.md
  * @contact  huangdijia@gmail.com
  */
+
 namespace Guandeng\Elasticsearch;
 
-use Closure;
 use Elasticsearch\ClientBuilder;
 use Guandeng\Elasticsearch\Exception\MissingConfigException;
 use Guandeng\Elasticsearch\Query\Builder;
@@ -19,8 +19,8 @@ use Hyperf\Coroutine\Coroutine;
 use Hyperf\Guzzle\RingPHP\CoroutineHandler;
 use Hyperf\Guzzle\RingPHP\PoolHandler;
 
-use function Hyperf\Support\make;
 use function Hyperf\Collection\data_get;
+use function Hyperf\Support\make;
 use function Hyperf\Tappable\tap;
 
 /**
@@ -58,6 +58,10 @@ class Client
             }
 
             $hosts = (array) data_get($poolConfig, 'hosts', []);
+
+            if (($retries = data_get($poolConfig, 'retries', 0)) > 0) {
+                $builder->setRetries((int) $retries);
+            }
             $builder->setHosts($hosts);
         });
     }
@@ -65,7 +69,7 @@ class Client
     public function __call($name, $arguments)
     {
         if (isset($arguments[0])) {
-            if ($arguments[0] instanceof Closure) {
+            if ($arguments[0] instanceof \Closure) {
                 $arguments[0] = $arguments[0](new Builder());
             }
 
